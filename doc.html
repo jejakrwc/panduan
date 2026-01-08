@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumentasi STOP LAMP</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
+body{background:#f4f4f9;color:#222}
+
+/* HEADER FIXED */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#222;
+  color:#fff;
+  padding:12px;
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  border-bottom:3px solid #ff0000;
+  z-index:1000;
+}
+
+/* KONTEN */
+main{
+  max-width:700px;
+  margin:auto;
+  padding:85px 20px 70px; /* ruang untuk header & footer */
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+.card h3{
+  margin-bottom:10px;
+  color:#ff0000;
+  font-size:16px;
+}
+.step{
+  display:flex;
+  gap:12px;
+  margin-bottom:10px;
+}
+.step i{
+  font-size:22px;
+  color:#0b9b23;
+  width:26px;
+  text-align:center;
+}
+ul{
+  padding-left:20px;
+  line-height:1.6;
+}
+.badge{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:6px;
+  background:#222;
+  color:#fff;
+  font-size:12px;
+}
+.note{
+  background:#fff3cd;
+  border-left:4px solid #ffc107;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+}
+
+/* FOOTER FIXED */
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  padding:10px;
+  background:#fff;
+  color:#777;
+  border-top:1px solid #ddd;
+  z-index:1000;
+}
+</style>
+</head>
+<body>
+
+<header>
+  📘 DOKUMENTASI PENGGUNAAN STOP LAMP
+</header>
+
+<main>
+
+<!-- PENDAHULUAN -->
+<div class="card">
+  <h3><i class="fa-solid fa-circle-info"></i> Tentang Sistem</h3>
+  <p>
+    STOP LAMP adalah sistem lampu LED berbasis <b>ESP8266</b> yang dikendalikan
+    melalui <b>Web Browser</b>. Sistem ini digunakan untuk menampilkan
+    <b>teks, animasi, serta lampu sen, rem, dan hazard</b> secara interaktif.
+  </p>
+</div>
+
+<!-- AKSES WEB -->
+<div class="card">
+  <h3><i class="fa-solid fa-globe"></i> Mengakses Web UI</h3>
+
+  <div class="step">
+    <i class="fa-solid fa-wifi"></i>
+    <div>Sambungkan perangkat ke WiFi <b>STOP_LAMP</b></div>
+  </div>
+
+  <div class="step">
+    <i class="fa-solid fa-link"></i>
+    <div>Buka browser dan akses <b>192.168.4.1</b></div>
+  </div>
+
+  <div class="step">
+    <i class="fa-solid fa-display"></i>
+    <div>Web kontrol akan tampil otomatis</div>
+  </div>
+</div>
+
+<!-- TAB TAMPILAN -->
+<div class="card">
+  <h3><i class="fa-solid fa-eye"></i> Tab Tampilan</h3>
+  <ul>
+    <li>Masukkan teks yang ingin ditampilkan</li>
+    <li>Pilih efek animasi teks</li>
+    <li>Atur font, kecepatan, dan kecerahan</li>
+    <li>Pilih mode:
+      <span class="badge">Teks</span>
+      <span class="badge">Animasi</span>
+      <span class="badge">Kombinasi</span>
+    </li>
+    <li>Klik <b>Terapkan</b> untuk mengirim ke perangkat</li>
+  </ul>
+</div>
+
+<!-- LAMPU BELAKANG -->
+<div class="card">
+  <h3><i class="fa-solid fa-car"></i> Lampu Belakang</h3>
+  <ul>
+    <li><b>Sen Kiri & Kanan</b> → panah & animasi arah</li>
+    <li><b>Rem</b> → berbagai variasi STOP</li>
+    <li><b>Hazard</b> → simbol bahaya & peringatan</li>
+  </ul>
+</div>
+
+<!-- WIFI -->
+<div class="card">
+  <h3><i class="fa-solid fa-wifi"></i> Pengaturan WiFi</h3>
+  <ul>
+    <li>Klik tombol <b>Atur WiFi</b></li>
+    <li>Masukkan SSID & Password baru</li>
+    <li>Password minimal <b>8 karakter</b></li>
+    <li>Perangkat akan restart otomatis</li>
+  </ul>
+
+  <div class="note">
+    ⚠ Setelah restart, sambungkan kembali ke WiFi baru
+  </div>
+</div>
+
+<!-- FIRMWARE -->
+<div class="card">
+  <h3><i class="fa-solid fa-microchip"></i> Update Firmware</h3>
+  <ul>
+    <li>Gunakan file <b>.bin</b></li>
+    <li>Upload melalui tab Firmware</li>
+    <li>Jangan mematikan perangkat saat update</li>
+    <li>Restart otomatis setelah selesai</li>
+  </ul>
+</div>
+
+<!-- TIPS -->
+<div class="card">
+  <h3><i class="fa-solid fa-lightbulb"></i> Tips Penggunaan</h3>
+  <ul>
+    <li>Gunakan kecerahan sesuai kondisi malam/siang</li>
+    <li>Batasi animasi berat untuk stabilitas</li>
+    <li>Pastikan catu daya stabil (≥ 2A)</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  STOP LAMP • ESP8266 LED Matrix • Dokumentasi Pengguna
+</footer>
+
+</body>
+</html>
